@@ -1,0 +1,70 @@
+package org.hussein.restaurantorder;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ChooseWaiter extends RestaurantOrders{
+	Scanner input=new Scanner(System.in);
+	WaiterImage waiterimg=new WaiterImage();
+
+	public void chooseyourwaiter(){
+		
+		while(waiter<1||waiter>4){
+			
+			System.out.println("Enter a number to choose your waiter: ");
+			System.out.println("1-Japanese Waiter");
+			System.out.println("2-Sleeping Waiter");
+			System.out.println("3-Alien Waiter");
+			System.out.println("4-Regular Waiter");
+		do{
+			try{// try and catch to let the user enter a number
+					waiter=input.nextInt();
+						if (waiter<1||waiter>4)//if the user entered a wrong number
+							{
+								System.out.println("Please enter a number between 1 and 4");
+							}
+		
+		}	catch(InputMismatchException e) //if the user didn't enter a number
+		{
+				System.out.println("Enter a number between 1 and 4 please");
+			
+		}input.nextLine();//clears the buffer
+		
+		}while(waiter<1||waiter>4);// end of do while loop
+	
+		switch(waiter){
+		case (1):
+			waiterimg.japaneseimage();
+			System.out.println("HishoNakaka:Welcome. My name is HishoNakaka and i will be your waiter.");
+	    	System.out.println("");
+			break;
+		case (2):
+			
+			waiterimg.na3sanimage();	
+			System.out.println("Abonnom:zzzzz My name is Abonnom");
+			System.out.println("");
+			break;
+		case (3):
+			
+			waiterimg.alienimage();
+			System.out.println("Boukkaz:$#@$ me is name Boukkaz");
+			System.out.println("");
+			break;
+
+		case (4):
+
+			waiterimg.regular();
+			System.out.println("Stef: My name is Stef and I will be your waiter");
+			System.out.println("");
+			break;
+		default:
+			System.out.println("Invalid input (Between 1 and 4). Please try again.");
+			break;
+
+				}//end of switch 
+		}//end of while loop
+
+		
+		}//end of chooseyourwaiter method
+
+}//end of class choosewaiter()
