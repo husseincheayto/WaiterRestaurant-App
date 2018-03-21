@@ -1,0 +1,65 @@
+package org.hussein.restaurantorder;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class WaiterImage extends RestaurantOrders{
+	
+	public void japaneseimage(){
+
+	JFrame frame=new JFrame();
+	ImageIcon icon=new ImageIcon("C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/japanese.png");
+	JLabel label=new JLabel(icon);
+	frame.add(label);
+	frame.pack();
+	if (waiter==1|| waiter==6){
+		frame.setVisible(true);
+		
+	}
+	}
+	
+	public void na3sanimage(){
+		JFrame frame=new JFrame();
+		ImageIcon icon=new ImageIcon("C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/na3san.png");
+		JLabel label=new JLabel(icon);
+		frame.add(label);
+		frame.pack();
+		if (waiter==2|| waiter==6){
+			frame.setVisible(true);
+			
+		}
+		}
+	
+	public void alienimage(){
+		JFrame frame=new JFrame();
+		ImageIcon icon=new ImageIcon("C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/alienwaiter.png");
+		JLabel label=new JLabel(icon);
+		frame.add(label);
+		frame.pack();
+		if (waiter==3|| waiter==6){
+			frame.setVisible(true);
+			
+		}
+	
+	}
+	
+	public void regular(){
+		
+		JFrame frame=new JFrame();
+		ImageIcon icon=new ImageIcon("C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/regwaiter.png");
+		JLabel label=new JLabel(icon);
+		frame.add(label);
+		frame.pack();
+		
+		if (waiter==4|| waiter==6){
+			frame.setVisible(true);
+	
+	}	
+
+	
+	
+}
+}
