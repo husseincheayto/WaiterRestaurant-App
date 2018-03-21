@@ -1,0 +1,18 @@
+package org.hussein.restaurantorder;
+
+public class Menu {
+	public void menu()
+	{
+		//display the menu with the price and numbers and description (shou byiji b2alba);
+		//may do it using HashMap
+		// may add it to the customer service method or may get the order method to this class
+		System.out.println("1-Zaatar           .............1750");
+		System.out.println("2-Zaatar Al Bered  .............1750");
+		System.out.println("3-Zaatar and Labneh.............2500");						
+		System.out.println("4-Zaatar and Cheese.............3000");
+		System.out.println("5-Selek            .............2000");
+		System.out.println("6-Akkawi           .............3500");
+		System.out.println("7-Kashkaval        .............6000");
+	}
+
+}
