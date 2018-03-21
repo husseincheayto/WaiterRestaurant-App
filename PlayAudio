@@ -1,0 +1,70 @@
+package org.hussein.restaurantorder;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class PlayAudio {
+	public void minionvoice()
+	{
+		try{
+			AudioClip clip=Applet.newAudioClip(new URL("file:C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/minion.wav"));
+			clip.play();
+		}catch(MalformedURLException murle){
+			murle.printStackTrace();
+		}
+		
+	}
+	
+	public void na3sanvoice(){
+		try{
+			AudioClip clip=Applet.newAudioClip(new URL("file:C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/na3san.wav"));
+			clip.play();
+		}catch(MalformedURLException murle){
+			murle.printStackTrace();
+		}
+		
+	}
+	public void japanvoice(){
+		try{
+			AudioClip clip=Applet.newAudioClip(new URL("file:C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/japanesevoice1.wav"));
+			clip.play();
+		}catch(MalformedURLException murle){
+			murle.printStackTrace();
+		}
+		
+	}
+	
+	public void japanvoice1(){
+		try{
+			AudioClip clip=Applet.newAudioClip(new URL("file:C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/japanesevoice2.wav"));
+			clip.play();
+		}catch(MalformedURLException murle){
+			murle.printStackTrace();
+		}
+		
+	}
+
+	public void hazbanvoice() {
+		try{
+			AudioClip clip=Applet.newAudioClip(new URL("file:C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/regularwaiter.wav"));
+			clip.play();
+		}catch(MalformedURLException murle){
+			murle.printStackTrace();
+		}
+		
+	}
+
+	public void minionvoice2() {
+		try{
+			AudioClip clip=Applet.newAudioClip(new URL("file:C:/Users/ekt/Documents/1HusseinAllfiles/javaluna/RestaurantMenuApp/minion2.wav"));
+			clip.play();
+		}catch(MalformedURLException murle){
+			murle.printStackTrace();
+		}
+		
+	}
+	
+
+}
