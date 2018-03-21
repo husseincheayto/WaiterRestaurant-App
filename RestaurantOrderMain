@@ -1,0 +1,82 @@
+package org.hussein.restaurantorder;
+
+import java.io.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.applet.*;
+import java.net.*;
+
+public class RestaurantOrders{
+
+	public static int waiter=6;
+
+	public static void main(String[] args) {
+		
+		
+		Scanner input=new Scanner(System.in);
+		Menu themenu=new Menu();// declaring object themenu
+		ChooseWaiter choosewai=new ChooseWaiter();//declaring object choosewaiter
+		PlayAudio audio=new PlayAudio();
+		
+		
+		Na3san na3as=new Na3san();
+		Minion minion=new Minion();
+		Hazban hazban=new Hazban();
+		Japanese japan=new Japanese();
+		 
+		
+		choosewai.chooseyourwaiter();
+
+		switch (waiter)
+		{
+			case 1:
+			
+				audio.japanvoice();
+				japan.NumOfCustomer();
+				japan.CustomerNames();
+				themenu.menu();//displays the menu
+				audio.japanvoice1();
+				japan.Order();
+				japan.Comments();
+				japan.DisplayOrder();
+
+				break;
+			case 2:
+			
+				audio.na3sanvoice();
+				na3as.NumOfCustomer();
+				na3as.CustomerNames();
+				themenu.menu();//displays the menu
+				na3as.Order();
+				na3as.Comments();
+				na3as.DisplayOrder();
+				break;
+			case 3:
+				
+				audio.minionvoice();
+				minion.NumOfCustomer();
+				minion.CustomerNames();
+				themenu.menu();//displays the menu
+				audio.minionvoice2();
+				minion.Order();
+				minion.Comments();
+				minion.DisplayOrder();
+				break;
+			case 4:
+				audio.hazbanvoice();
+				hazban.NumOfCustomer();
+				hazban.CustomerNames();
+				themenu.menu();//displays the menu
+				hazban.Order();
+				hazban.Comments();
+				hazban.DisplayOrder();
+				break;
+			default:
+				System.out.println("default");
+				break;
+		
+		}//end of switch cases
+
+}//end of main
+
+}//end of RestaurantOrder()
