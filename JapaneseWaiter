@@ -1,0 +1,248 @@
+package org.hussein.restaurantorder;
+
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.LinkedHashMap;
+import java.util.Scanner;
+
+public class Japanese {
+
+
+	static Scanner scan=new Scanner(System.in);
+	
+	private int numcus;
+	private int counter=0;
+
+	private int totalSum=0;
+	
+	private HashMap<Integer,String> names=new HashMap<Integer,String>();
+	private LinkedHashMap<Integer,String> order=new LinkedHashMap<Integer,String>();
+	
+	
+	public Japanese()
+	{
+		this.numcus=numcus;
+		this.totalSum=totalSum;
+		this.names=names;
+	}
+	public void NumOfCustomer() {
+		
+		numcus=0;
+		System.out.println("Please enter the number of customers: ");
+		
+		Scanner scan=new Scanner(System.in);
+		do{
+			try{
+				numcus=scan.nextInt();
+			}catch(InputMismatchException e)
+		{
+			System.out.println("Please enter a number > 0");
+		}
+		scan.nextLine();
+		}while(numcus<1);
+	}//end of NumofCustomer method
+	public void CustomerNames()
+	/*if the number of customers is greater than 5 then it will ask the user to submit every name 
+	so that he/she doesn't repeat all the names just for 1 mistake.
+	Whereas if the number of customers is less than or equal to 5 then the user will submit once.
+	*/
+	{
+		String cont="yes";//string if no to continue yes to repeat
+		
+		if (numcus>5)
+		{
+			for (int i=numcus;i>0;i--)
+				{
+					do{
+						System.out.println("Enter names please ");
+						names.put(i,scan.next());
+						System.out.println("Do you wish to repeat?");
+						cont=scan.next();//if yes then exit the while loop
+					  }while(cont.equals("yes"));//end of do while loop
+				}//end of for  loop
+				
+		}else{
+				do{
+					System.out.println("Enter names please");
+						for (int i=numcus;i>0;i--)
+						{
+							names.put(i,scan.next());
+						}//end of for loop
+					System.out.println("Do you wish to repeat?");
+					cont=scan.next();//if yes then exit the while loop
+				  }while(cont.equals("yes"));//end of do while loop 
+		    }// end of else statement
+		}//end of CustomerNames method
+
+	public void Order()
+	{
+		
+		int price=0;
+		int choice=0;
+		String contin="yes";
+		String sure;
+		
+		System.out.println(" ");
+		
+		System.out.println("To choose your order, enter a number: ");
+		System.out.println("0 to cancel");
+		for (int numberofcustomers=numcus;(numberofcustomers-1)>=0;numberofcustomers--){
+			
+			System.out.println(" ");
+			System.out.println(names.get(numberofcustomers)+"'s order: ");
+			
+			while(contin.equals("yes")){	
+					do{//to make sure that the user entered a number
+							try{// try and catch to let the user enter a number
+								choice=scan.nextInt();		
+							}	catch(InputMismatchException e) //if the user didn't enter a number
+		{
+				System.out.println("Enter a number between 1 and 7 please");
+				choice=10000;
+		}scan.nextLine();//clears the buffer
+		
+		}while(choice<0||choice>7);// end of do while loop
+			
+			
+			switch(choice)
+		{
+		case 0:
+			break;
+		case 1:
+			price=1750;
+			System.out.println("Zaatar? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Zaatar");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total bill is: "+totalSum+"L.L");}
+			break;
+			
+		case 2:
+			price=1750;
+			System.out.println("Zaatar al Bered? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Zaatar al Bered");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total bill is: "+totalSum+"L.L");}
+			break;	
+			
+		case 3:
+			price=2500;
+			System.out.println("Zaatar and Labneh? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Zaatar and Labneh");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total bill is: "+totalSum+"L.L");}
+			break;
+			
+		case 4:
+			price=3000;
+			System.out.println("Zaatar and Cheese? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Zaatar and Cheese");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total bill is: "+totalSum+"L.L");}
+			break;
+		
+		case 5:
+			price=2000;
+			System.out.println("Selek? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Selek");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total bill is: "+totalSum+"L.L");}
+			break;
+			
+		case 6:
+			price=3500;
+			System.out.println("Akkawi? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Akkawi");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total bill is: "+totalSum+"L.L");}
+			break;
+			
+		case 7:
+			price=6000;
+			System.out.println("Kashkaval? (print 'yes' to submit your order)");
+			sure=scan.next();
+			if (sure.equals("yes")){
+				order.put(counter,"Kashkaval");
+				counter++;
+				totalSum=totalSum+price;
+				System.out.println("Your total sum is: "+totalSum+"L.L");}
+			break;
+				
+		default:
+			System.out.println("please choose your order");
+			break;
+		}//end of SWITCH
+			System.out.println(" ");
+			System.out.println("Do you wish to order more? Enter 'yes' to order more");
+			contin=scan.next();
+			if (contin.equals("yes")){
+				System.out.println(" ");
+				System.out.println("Enter another order please");
+			}
+			else if ((numberofcustomers-1)==0)
+			{
+				System.out.println("-----------------------------------------------");
+				System.out.println("Thank you");
+			}
+				
+			else 	
+			{
+				System.out.println(" ");
+				System.out.println(names.get(numberofcustomers-1)+", please select your order");
+			} 
+			
+			}//end of while loop
+			choice=0;
+			contin="yes";
+			
+		}//end of FOR loop
+	}//end of Order method 
+
+	public void Comments()
+	{
+		//this method is used for any comment about the food (ma bade toum bl tawouk)
+		
+		String contin="yes";
+		String comments;
+		do 
+		{
+			System.out.println("Please enter comments about the food or drinks (example: I don't want tomatoes in the chicken burger)");
+			comments=scan.next();
+			System.out.println("Do you wish to repeat?");
+			contin=scan.next();
+		}while(contin.equals("yes")); //end of do while
+			System.out.println("Thank you... Sa7tein");
+	}//end of Comments method
+	
+	public void DisplayOrder()
+	{
+		System.out.println("");
+		System.out.println("You have ordered: ");
+		System.out.println("");
+		for (int i=0;i<counter;i++)
+		{
+			System.out.println(order.get(i));			
+			
+		}
+		System.out.println("Your bill is: "+totalSum);
+	}
+
+
+}
